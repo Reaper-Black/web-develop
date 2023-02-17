@@ -1,0 +1,7 @@
+{
+  "name": "integral-chat-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
