@@ -1,0 +1,50 @@
+ion-content{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+    ion-text{
+        margin-bottom: 2vh;
+        h1{
+            letter-spacing: 2px;
+            font-size: 1.8rem !important;
+            padding: 2vh;
+        }
+        h3{
+            font-size: 1.5rem !important;
+            padding: 2vh;
+            text-align: justify;
+        }
+        p{
+            font-size: 1.2rem !important;
+            margin-top: 3px;
+            padding: 2vh;
+            text-align: justify;
+        }
+        footer{
+            padding: 2vh;
+        }
+    }
+    ion-row {
+        margin-bottom: 5vh;
+      }
+      ion-button {
+        width: 20vh;
+        margin-bottom: 10vh;
+        float: right;
+        padding-right: 2vh;
+      }
+      .alignItems {
+        ion-checkbox, ion-note {
+          display: inline-block;
+          vertical-align: middle;
+          margin-left: 2vh;
+        }
+        ion-checkbox {
+          margin-right: 1vh;
+          --size: 1.1rem;
+        }
+      }
+      ion-col {
+        ion-note {
+          font-size: 0.85rem;
+        }
+      }
+}

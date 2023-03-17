@@ -51,7 +51,7 @@ export class AuthService {
         email: formValue.email,
         name: formValue.username,
         uid: registeredUser.user.uid,
-        photo: 'https://i.proavatar.cc/' + this.randomIntFromInterval(200, 400)
+        photo: 'https://i.pravatar.cc/' + this.randomIntFromInterval(200, 400)
       }
       await this.apiService.setDocument(`users/${registeredUser.user.uid}`, data)
       const userData ={

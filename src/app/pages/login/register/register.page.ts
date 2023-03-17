@@ -12,8 +12,9 @@ import { AlertController } from '@ionic/angular';
 export class RegisterPage implements OnInit {
 
   signupForm: FormGroup;
-  isTypePassword: boolean = true;
-  isLoading:  boolean = false;
+  isTypePassword: boolean = true
+  isLoading:  boolean = false
+
 
   constructor(
     private router: Router,

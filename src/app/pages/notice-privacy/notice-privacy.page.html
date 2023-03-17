@@ -1,0 +1,50 @@
+<ion-header class="title-header">
+  <ion-toolbar color="primary">
+    <ion-title class="ion-padding ion-text-center">Aviso de Privacidad</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-text>
+      <h1 class="ion-text-center">Aviso de privacidad para una aplicación de chat instantáneo de acuerdo a la Ley de Protección de Datos Personales en Posesión de Particulares en México.</h1>
+      <h3 class="ion-aling-center">La privacidad de los usuarios es muy importante para nosotros, por lo que nos comprometemos a proteger los datos personales que nos proporcionen. 
+        Este Aviso de Privacidad describe cómo recopilamos, utilizamos, protegemos y compartimos la información de los usuarios de nuestra aplicación de chat instantáneo.</h3>
+    <p>1.	Responsable de la Protección de Datos Personales:
+      El responsable del tratamiento de los datos personales es Powerful Chats, con domicilio en Blvd. Juan Pablo II No. 1302 Ex hacienda la Cantera, 20200 Aguascalientes, Ags México.</p>
+      <p>2.	Datos personales recopilados:
+        Los datos personales que recopilamos son los siguientes:
+        •	Nombre de usuario o nombre real
+        •	Dirección de correo electrónico
+        •	Número de teléfono móvil
+        •	Foto de perfil
+        •	Información sobre los contactos agregados
+        •	Mensajes y archivos compartidos a través de la aplicación.</p>
+        <p>3.	Finalidades del tratamiento de los datos personales:
+          Los datos personales recopilados serán utilizados con las siguientes finalidades:
+          •	Creación y gestión de la cuenta de usuario
+          •	Ofrecer servicios de mensajería instantánea
+          •	Gestionar y mejorar la calidad del servicio
+          •	Enviar notificaciones sobre actualizaciones y mejoras de la aplicación.</p>
+        <p>4.	Medios para limitar el uso o divulgación de los datos personales:
+          Nos comprometemos a no transferir, compartir, vender ni divulgar los datos personales de los usuarios, excepto en los siguientes casos:
+          Cuando el usuario haya otorgado su consentimiento expreso para el tratamiento de sus datos personales
+          Cuando se requiera por ley o por una autoridad competente.
+          Cuando sea necesario para proteger los derechos e intereses legítimos de la empresa.</p>
+        <p>5.	Derechos ARCO:
+          Los usuarios tienen derecho a ejercer los derechos de acceso, rectificación, cancelación y oposición de sus datos personales (derechos ARCO), así como a revocar el consentimiento otorgado para el tratamiento de los mismos. Para ello, el usuario debe enviar una solicitud por escrito al responsable del tratamiento de datos personales a la dirección de correo electrónico: andres_men98@hotmail.com.</p>
+        <p>6.	Seguridad de los datos personales:
+          Nos comprometemos a proteger la seguridad, integridad y confidencialidad de los datos personales recopilados. Para ello, hemos implementado medidas de seguridad tecnológicas y organizativas adecuadas para garantizar la protección de los datos personales y prevenir su pérdida, uso indebido o alteración.</p>
+        <p>7.	Cambios al Aviso de Privacidad:
+          Este Aviso de Privacidad puede ser modificado en cualquier momento para cumplir con los requisitos legales o para adaptarlo a nuestras prácticas de privacidad. Cualquier cambio se publicará en nuestra página web y se informará a los usuarios de la aplicación.
+          Al utilizar nuestra aplicación, los usuarios aceptan los términos y condiciones de este Aviso de Privacidad. Si el usuario no está de acuerdo con este Aviso de Privacidad, no debe utilizar la aplicación.</p>
+        <footer class="ion-text-right">Fecha de última actualización: 21-febrero-2023</footer>
+  </ion-text>
+  <ion-row class="ion-margin-vertical">
+    <ion-col size="12" class="alignItems">
+      <div align=left>
+        <ion-checkbox [(ngModel)]="checkedbtn"></ion-checkbox>
+        <ion-note>Acepto los términos y condiciones</ion-note>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-button color="primary" shape="round" href="/login" lines="none" [disabled]="!checkedbtn">Continuar</ion-button>
+</ion-content>

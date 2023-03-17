@@ -17,6 +17,10 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: 'notice-privacy',
+    loadChildren: () => import('./pages/notice-privacy/notice-privacy.module').then( m => m.NoticePrivacyPageModule)
+  },
 ];
 
 @NgModule({
