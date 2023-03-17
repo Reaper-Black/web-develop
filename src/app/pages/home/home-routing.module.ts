@@ -11,7 +11,11 @@ const routes: Routes = [
   {
     path: 'chats/:id',
     loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
-  }
+  },
+  {
+    path: 'geolocation',
+    loadChildren: () => import('../geolocation/geolocation.module').then( m => m.GeolocationPageModule)
+  },
 ];
 
 @NgModule({

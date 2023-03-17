@@ -15,14 +15,11 @@
     </ion-popover>
   </ion-toolbar>
   <ion-segment [value]="segment" mode="md" (ionChange)="onSegmentChanged($event)">
-    <ion-segment-button value="status">
-      <ion-label>Status</ion-label>
-    </ion-segment-button>
     <ion-segment-button value="chats">
       <ion-label>Chats</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="calls">
-      <ion-label>Calls</ion-label>
+    <ion-segment-button routerLink="/geolocation" value="geolocation">
+      <ion-label>Ubicacion</ion-label>
     </ion-segment-button>
   </ion-segment>
 </ion-header>

@@ -21,6 +21,10 @@ const routes: Routes = [
     path: 'notice-privacy',
     loadChildren: () => import('./pages/notice-privacy/notice-privacy.module').then( m => m.NoticePrivacyPageModule)
   },
+  {
+    path: 'geolocation',
+    loadChildren: () => import('./pages/geolocation/geolocation.module').then( m => m.GeolocationPageModule)
+  },
 ];
 
 @NgModule({
