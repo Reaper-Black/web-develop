@@ -21,7 +21,8 @@ export class HomePage implements OnInit {
   model = {
     icon: 'chatbubbles-outline',
     title: 'No Chats',
-    color: 'danger'
+    color: 'danger',
+    
   }
 
   constructor(
