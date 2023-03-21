@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap');
 ion-header.title-header {
     ion-toolbar{
-        font-family: "Satisfy", cursive !important;
+        font-family: 'Dosis', sans-serif !important;
+
         ion-title{
             letter-spacing: 2px;
             font-size: 1.8rem !important;
@@ -9,6 +11,7 @@ ion-header.title-header {
     ion-segment{
         --background: var(--ion-color-primary);
         ion-segment-button{
+            font-family: 'Dosis', sans-serif !important;
             font-size: 1rem;
             --color: var(--ion-color-light);
             --color-checked: #fff;

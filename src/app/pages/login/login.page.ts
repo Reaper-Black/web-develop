@@ -47,17 +47,17 @@ export class LoginPage implements OnInit {
   }
 
   login(form){
-    //this.isLoading = true
+    this.isLogin = true
     console.log(form.value)
     this.authService.login(form.value.email, form.value.password).then(data  => {
       console.log(data)
       this.router.navigateByUrl('/home')
-      //this.isLoading = false
+      this.isLogin = false
       form.reset()
     })
     .catch(e => {
       console.log(e)
-      //this.isLoading = false
+      this.isLogin = false
       let msg: string = 'Could not sign you up, please try again.'
       if(e.code == 'auth/user-not-found') msg = 'Email address could not found'
       else if(e.code == 'auth/wrong-password') msg = 'Please enter a correct password'

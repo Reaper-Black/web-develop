@@ -1,5 +1,5 @@
 <ion-header class="title-header">
-  <ion-toolbar color="primary">
+  <ion-toolbar color="tertiary">
     <ion-title class="ion-padding ion-text-center">Aviso de Privacidad</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -41,10 +41,10 @@
   <ion-row class="ion-margin-vertical">
     <ion-col size="12" class="alignItems">
       <div align=left>
-        <ion-checkbox [(ngModel)]="checkedbtn"></ion-checkbox>
+        <ion-checkbox color="tertiary" [(ngModel)]="checkedbtn"></ion-checkbox>
         <ion-note>Acepto los términos y condiciones</ion-note>
       </div>
     </ion-col>
   </ion-row>
-  <ion-button color="primary" shape="round" href="/login" lines="none" [disabled]="!checkedbtn">Continuar</ion-button>
+  <ion-button color="tertiary" shape="round" href="/login" lines="none" [disabled]="!checkedbtn">Continuar</ion-button>
 </ion-content>

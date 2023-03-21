@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { addDoc, collection, collectionData, doc, docData, Firestore, getDoc, getDocs, query, setDoc, where } from '@angular/fire/firestore';
+import { addDoc, collection, collectionData, doc, docData, Firestore, getDoc, getDocs, orderBy, OrderByDirection, query, setDoc, where } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -66,5 +66,9 @@ export class ApiService {
 
   whereQuery(fieldPath, condition, value){
     return where(fieldPath, condition, value)
+  }
+
+  orderByQuery(fieldPath, directionStr: OrderByDirection = 'asc'){
+    return orderBy(fieldPath, directionStr)
   }
 }

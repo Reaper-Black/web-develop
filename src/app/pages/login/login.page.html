@@ -4,9 +4,9 @@
   <div class="circleBase type2 circle2"></div>
 
   <ion-label class="welcomeMessage">
-    <ion-text color="light">Welcome Back,</ion-text> 
+    <ion-text color="light">Bienvenido</ion-text> 
     <ion-text color="white">
-      <p>Log In!</p>
+      <p>Inicia Sesión!</p>
     </ion-text>
   </ion-label> 
 
@@ -18,14 +18,14 @@
         </ion-icon>
         <ion-input 
           formControlName="email" 
-          placeholder="Enter Email Address">
+          placeholder="Correo">
         </ion-input>
       </ion-item>
       <ion-text 
         class="ion-text-left"
         color="danger"
         *ngIf="!form.get('email').valid && form.get('email').touched">
-        <p class="error">*Please enter proper Email Address</p>
+        <p class="error">*Porfavor Ingresa tu Correo </p>
       </ion-text>
 
       <ion-item class="ion-margin-vertical">
@@ -37,7 +37,7 @@
         <ion-input 
           formControlName="password" 
           [type]="isTypePassword ? 'password' : 'text'"
-          placeholder="Enter Password">
+          placeholder="Contraseña">
         </ion-input>
       </ion-item>
       <ion-text 
@@ -47,32 +47,30 @@
         <p 
           class="error" 
           *ngIf="form.get('password').invalid && form.get('password').errors['required']">
-          *Please enter your Password
+          *Porfavor Ingresa tu Contraseña
         </p>
         <p 
           class="error" 
           *ngIf="form.get('password').dirty">
-          *Password must be of atleast 8 characters
+          *La contraseña debe contener 8 caracteres
         </p>
       </ion-text>
 
       <ion-row class="ion-margin-vertical">
-        <ion-col size="6" class="alignItems">
-          <div align=left>
-            <ion-checkbox></ion-checkbox>
-            <ion-note>Remember me</ion-note>
-          </div>
-        </ion-col>
         <ion-col size="6">
-          <div align=right>
-            <ion-note>Forgot password?</ion-note>
+          <div align=left>
+            <ion-note>Olvidaste tu contraseña?</ion-note>
           </div>
         </ion-col>
       </ion-row>
-      <ion-button color="primary" shape="round" (click)="onSubmit()">Log In</ion-button>
+      <!--<ion-button color="primary" shape="round" (click)="onSubmit()">Log In</ion-button>-->
+      <ion-button *ngIf="!isLogin" color="tertiary" shape="round" (click)="onSubmit()">Iniciar Sesión</ion-button>
+      <ion-button fill="clear" *ngIf="isLogin">
+        <ion-spinner name="crescent" color="tertiary"></ion-spinner>
+      </ion-button>
       <p class="signup">
         <ion-note>
-          Not a member yet? <ion-text routerLink="register" color="primary">Sign Up</ion-text>
+          No estas registrado?<ion-text routerLink="register" color="primary">Registrarse</ion-text>
         </ion-note>
       </p>
     </ion-list>

@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap');
 ion-item{
+    font-family: 'Dosis', sans-serif !important;
     width: 90%;
     margin: auto;
     border-radius: 5px;
     padding-bottom: 1vh;
+     ion-label{
+        font-family: 'Dosis', sans-serif !important;
+     }
 }

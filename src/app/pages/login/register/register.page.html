@@ -5,9 +5,9 @@
   <div class="circleBase type2 circle2"></div>
 
   <ion-label class="welcomeMessage">
-    <ion-text color="light">Hello,</ion-text> 
+    <ion-text color="light">Hola,</ion-text> 
     <ion-text color="white">
-      <p>Sign Up!</p>
+      <p>Registrate!</p>
     </ion-text>
   </ion-label> 
 
@@ -26,14 +26,14 @@
         </ion-icon>
         <ion-input 
           formControlName="username" 
-          placeholder="Enter Username">
+          placeholder="Nombre de Usuario">
         </ion-input>
       </ion-item>
       <ion-text 
         class="ion-text-left"
         color="danger"
         *ngIf="!signupForm.get('username').valid && signupForm.get('username').touched">
-        <p class="error">*Please enter Username</p>
+        <p class="error">*Porfavor Ingresa tu Nombre de Usuario/p>
       </ion-text>
 
       <ion-item class="ion-margin-vertical">
@@ -42,14 +42,14 @@
         </ion-icon>
         <ion-input 
           formControlName="email" 
-          placeholder="Enter Email Address">
+          placeholder="Ingresa tu Correo">
         </ion-input>
       </ion-item>
       <ion-text 
         class="ion-text-left"
         color="danger"
         *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched">
-        <p class="error">*Please enter proper Email Address</p>
+        <p class="error">*Porfavor Ingresa tu Correo </p>
       </ion-text>
 
       <ion-item class="ion-margin-vertical">
@@ -61,7 +61,7 @@
         <ion-input 
           formControlName="password" 
           [type]="isTypePassword ? 'password' : 'text'"
-          placeholder="Enter Password">
+          placeholder="Contraseña">
         </ion-input>
       </ion-item>
       <ion-text 
@@ -71,7 +71,7 @@
         <p 
           class="error" 
           *ngIf="signupForm.get('password').invalid && signupForm.get('password').errors['required']">
-          *Please enter your Password
+          *Porfavor Ingresa tu Contraseña
         </p>
         <p 
           class="error" 
@@ -83,13 +83,14 @@
       <ion-row class="ion-margin-vertical">
         <ion-col size="12" class="alignItems">
           <div align=left>
-            <ion-checkbox></ion-checkbox>
-            <ion-note>I accept the policy and terms</ion-note><br>
-            <a href="/notice-privacy">Check our notice privacy</a>
+            <a href="/notice-privacy">Revisa Nuestro Aviso de Privacidad</a>
           </div>
         </ion-col>
       </ion-row>
-      <ion-button color="primary" shape="round" (click)="onSubmit()">Sign Up</ion-button>
+      <ion-button *ngIf="!isLoading" color="tertiary" shape="round" (click)="onSubmit()">Registrarse</ion-button>
+      <ion-button fill="clear" *ngIf="isLoading">
+        <ion-spinner name="crescent" color="tertiary"></ion-spinner>
+      </ion-button>
     </ion-list>
   </form>
 </ion-content>

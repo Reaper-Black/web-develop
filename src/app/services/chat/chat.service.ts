@@ -11,6 +11,7 @@ export class ChatService {
   currentUserId: string
   public users: Observable<any>
   public chatRooms: Observable<any>
+  public selectedChatRoomMessages: Observable<any>
 
   constructor(
     public auth: AuthService,
@@ -83,5 +84,30 @@ export class ChatService {
         return of(data)
       })
     )
+  }
+
+  getChatRoomMessages(chatRoomId){
+    this.selectedChatRoomMessages = this.api.collectionDataQuery(
+    `chats/${chatRoomId}/messages`,
+    this.api.orderByQuery('createdAt', 'desc')
+    )
+    .pipe(map((arr: any) => arr.reverse()))
+  }
+
+  async sendMessage(chatId, msg){
+    try{
+      const new_message = {
+        message: msg,
+        sender: this.currentUserId,
+        createdAt: new Date()
+      }
+      console.log(chatId)
+      if(chatId){
+        await this.api.addDocument(`chats/${chatId}/messages`, new_message)
+      }
+    } catch(e){
+      throw(e)
+    }
+
   }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { ModalController, PopoverController } from '@ionic/angular';
-import { Observable } from 'rxjs';
+import { Observable, take } from 'rxjs';
 import { ChatService } from 'src/app/services/chat/chat.service';
 
 @Component({
@@ -18,14 +18,11 @@ export class HomePage implements OnInit {
   open_new_chat = false
   users: Observable<any[]>
   chatRooms: Observable<any[]>
-  /*users = [
-    {id: 1, name: 'Andres', photo: 'https://i.pravatar.cc/389'},
-    {id: 2, name: 'Juan', photo: 'https://i.pravatar.cc/337'}
-]
-  chatRooms = [
-  {id: 1, name: 'María', photo: 'https://i.pravatar.cc/374'},
-  {id: 2, name: 'Mitzi', photo: 'https://i.pravatar.cc/300'}
-]*/
+  model = {
+    icon: 'chatbubbles-outline',
+    title: 'No Chats',
+    color: 'danger'
+  }
 
   constructor(
     private router: Router,
@@ -55,7 +52,7 @@ export class HomePage implements OnInit {
 
   onSegmentChanged(event: any){
     console.log(event)
-
+    this.segment = event.detail.value
   }
 
   newChat(){
@@ -97,7 +94,17 @@ export class HomePage implements OnInit {
   }
 
   getChat(item){
-    this.router.navigate(['/','home','chats', item?.id])
+    (item?.user).pipe(
+      take(1)
+    ).subscribe(user_data => {
+      console.log('data: ', user_data)
+      const navData: NavigationExtras = {
+        queryParams: {
+          name: user_data?.name
+        }
+      }
+      this.router.navigate(['/','home','chats', item?.id], navData)
+    })
   }
 
   getUser(user: any){
