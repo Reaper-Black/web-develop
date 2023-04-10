@@ -65,7 +65,7 @@ export class GeolocationPage implements OnInit {
 }
 
 /*import { Component, OnInit} from '@angular/core';
-
+  declare var google;
 
 interface Marker {
   position: {
