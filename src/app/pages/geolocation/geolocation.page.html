@@ -3,11 +3,21 @@
     <ion-title class="ion-padding ion-text-center">Ubicación</ion-title>
   </ion-toolbar>
   <ion-segment>
-    <ion-segment-button value="back" routerLink="/home" >
+    <ion-segment-button value="back" routerLink="/home">
       <ion-label>Regresar</ion-label>
     </ion-segment-button>
   </ion-segment>
 </ion-header>
 <ion-content>
-  <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1512.2370650269486!2d-102.26566101196883!3d21.89152177383964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDUzJzI4LjIiTiAxMDLCsDE1JzU3LjMiVw!5e0!3m2!1sen!2smx!4v1679091989766!5m2!1sen!2smx" width="500" height="800" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </ion-content>
+  <!--<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1512.2370650269486!2d-102.26566101196883!3d21.89152177383964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDUzJzI4LjIiTiAxMDLCsDE1JzU3LjMiVw!5e0!3m2!1sen!2smx!4v1679091989766!5m2!1sen!2smx" width="500" height="800" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
+
+  <div class="container d-flex flex-column align-items-center justify-content-center show-map" id="map">
+
+    <div class="d-flex flex-column align-items-center justify-content-center location-btn bg-secondary p-5 rounded-pill">
+        <i class="fa-solid fa-location-crosshairs mb-5"></i>
+        <button type="button" class="btn btn-dark mb-5 fs-1 rounded-pill" (click)="loadMap()">¿Dónde Estoy?</button>
+
+    </div>
+
+</div>
+</ion-content>

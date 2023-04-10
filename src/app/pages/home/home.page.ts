@@ -3,6 +3,7 @@ import { NavigationExtras, Router } from '@angular/router';
 import { ModalController, PopoverController } from '@ionic/angular';
 import { Observable, take } from 'rxjs';
 import { ChatService } from 'src/app/services/chat/chat.service';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -22,12 +23,12 @@ export class HomePage implements OnInit {
     icon: 'chatbubbles-outline',
     title: 'No Chats',
     color: 'danger',
-    
   }
 
   constructor(
     private router: Router,
-    private chatService: ChatService
+    private chatService: ChatService,
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
@@ -44,7 +45,7 @@ export class HomePage implements OnInit {
     try {
       console.log('logout')
       this.popover.dismiss()
-      await this.chatService.auth.logout()
+      await this.authService.logout()
       this.router.navigateByUrl('/login', {replaceUrl: true})
     } catch(e){
       console.log(e)

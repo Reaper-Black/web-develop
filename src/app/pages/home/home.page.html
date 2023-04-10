@@ -1,6 +1,6 @@
 <ion-header class="title-header">
   <ion-toolbar color="tertiary">
-    <ion-title class="ion-padding ion-text-center">CONNECTED PARTNER</ion-title>
+    <ion-title class="ion-padding ion-text-center">Connected Partner</ion-title>
     <ion-buttons slot="end">
       <ion-button fill="clear" id="popover">
         <ion-icon slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
@@ -25,38 +25,28 @@
 </ion-header>
 
 <ion-content color="light">
+  <app-empty-screen *ngIf="(chatRooms | async)?.length === 0" [model]="model">
+  </app-empty-screen>
 
-  <app-empty-screen
-  *ngIf="(chatRooms | async)?.length === 0"
-  [model]="model">
-</app-empty-screen>
+  <ion-content *ngIf="segment === 'chats' && (chatRooms | async) as rooms">
+    <ion-list *ngIf="rooms?.length > 0">
 
-<ion-content *ngIf="segment === 'chats' && (chatRooms | async) as rooms">
+      <ion-list-header class="ion-padding-bottom" color="light">
+        CHATS RECIENTES
+      </ion-list-header>
 
-  <ion-list *ngIf="rooms?.length > 0">
-
-    <ion-list-header class="ion-padding-bottom" color="light">
-      CHATS RECIENTES
-    </ion-list-header>
-
-    <ion-item *ngFor="let item of rooms" (click)="getChat(item)" [detail]="true">
-      <ng-container *ngIf="(item?.user | async) as user">
-        <ion-avatar slot="start">
-          <img [src]="getUser(user)?.photo" />
-        </ion-avatar>
-        <ion-label>
-          {{getUser(user)?.name}}
-          <!--p>
-            <ion-text>
-              message
-            </ion-text>
-          </p>-->
-        </ion-label>
-        <!--<ion-text slot="end" color="medium">03:58 AM</ion-text>-->
-      </ng-container>
-    </ion-item>
-  </ion-list>
-</ion-content>
+      <ion-item *ngFor="let item of rooms" (click)="getChat(item)" [detail]="true">
+        <ng-container *ngIf="(item?.user | async) as user">
+          <ion-avatar slot="start">
+            <img [src]="getUser(user)?.photo" />
+          </ion-avatar>
+          <ion-label>
+            {{getUser(user)?.name}}
+          </ion-label>
+        </ng-container>
+      </ion-item>
+    </ion-list>
+  </ion-content>
 
   <ion-fab slot="fixed" horizontal="end" vertical="bottom">
     <ion-fab-button (click)="newChat()" color="tertiary">
