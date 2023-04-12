@@ -5,7 +5,7 @@ import { AuthGuard } from './guards/auth/auth.guard';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'notice-privacy',
     pathMatch: 'full'
   },
   {
